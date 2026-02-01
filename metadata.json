@@ -1,0 +1,43 @@
+{
+  "id": 11324,
+  "title": "Telegram Support Bot with OpenAI, Pinecone and Human Expert Escalation",
+  "slug": "telegram-support-bot-with-openai-pinecone-and-human-expert-escalation-11324",
+  "description": "Template nameSmart AI Support Assistant for TelegramShort descriptionSmart AI Support Assistant for Telegram automatically answers repeated questionsin your group using a Q&A knowledge base in Pinecone and forwards new or unclearquestions to a human expert.Long description (Description поле)HOW IT WORKS 1. Question detection listens to messages in a Telegram group and checks whether each new message is a real question or an expert reply. 2. Knowledge base search looks for an existing answer in the Pinecone vector store for valid questions from the group. 3. Auto‑reply from cache sends the saved answer straight back to the group when a good match is found, without involving the expert. 4. Escalation to expert creates a ticket and forwards unanswered questions to the expert in a private chat with the same bot. 5. Expert learning loop saves the expert’s reply to Pinecone so that similar questions are answered automatically in the future.SETUP STEPS * Connect Telegram Trigger to a single Telegram bot that is added as an admin to the group/supergroup and receives all user messages. * Use the same bot for the expert: the expert’s private chat with this bot is where tickets and questions are delivered. * Set up Pinecone: create an index, note the environment and index name, and add your Pinecone API key to n8n credentials. * Add your AI model API key (for example, OpenAI) and select the model used for embeddings and answer rewriting. * Configure any environment variables or n8n credentials for project IDs and spaces/namespaces used in Pinecone. * Test the full flow: send a question in the group, confirm that a ticket reaches the expert in a private chat, reply once, and check that the next similar question is answered automatically from the cache.",
+  "metadescription": "Boost your Telegram group support with a smart AI assistant: auto-answer FAQs, forward complex queries to experts, and improve responses over time.",
+  "summary": "Effortlessly handles group Q&A by detecting questions and searching a Pinecone-powered knowledge base for instant AI replies.\n\nForwards new or unclear queries to a human expert via private ticket, ensuring personal support for complex issues.\n\nContinuously enhances automation by learning from expert responses, updating the knowledge base for future efficiency.\n\nSimple setup: connect a Telegram bot, integrate Pinecone and your AI model, set credentials, and test the flow for seamless operation.",
+  "date": "28 Nov 2025",
+  "createdAtRaw": "2025-11-28T09:11:56.205+00:00",
+  "categories": [
+    "Support Chatbot",
+    "AI RAG"
+  ],
+  "nodeTypes": [
+    "n8n-nodes-base.if",
+    "n8n-nodes-base.set",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.switch",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.stickyNote",
+    "n8n-nodes-base.telegramTrigger",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter"
+  ],
+  "author": {
+    "name": "Igor Chernyaev",
+    "username": "chernyaevi",
+    "avatar": "https://gravatar.com/avatar/c0c181d8245571522bae8d9b03ce6a17c350109a0e1c804b0c9c7cac177f80eb?r=pg&d=retro&size=200",
+    "verified": false
+  },
+  "popularity": 19,
+  "visitors": 28,
+  "inserters": 8,
+  "templateUrl": "https://n8n.io/workflows/11324",
+  "readme": "",
+  "thumbnail": "https://supabase.amastuces.com/storage/v1/object/public/worklowscreenshot/11324-telegram-support-bot-with-openai--pinecone-and-human-expert-escalation.webp",
+  "complexityLevel": "advanced",
+  "templateData": null,
+  "price": 0,
+  "referalUrl": null
+}
